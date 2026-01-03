@@ -1,0 +1,26 @@
+services:
+  # Backend Service
+  - type: web
+    name: event-management-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node index.js
+    envVars:
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: FIREBASE_PRIVATE_KEY
+        sync: false
+      - key: FIREBASE_CLIENT_EMAIL
+        sync: false
+
+  # Frontend Service
+  - type: web
+    name: event-management-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false
+
