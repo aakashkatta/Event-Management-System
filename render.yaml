@@ -13,6 +13,14 @@ services:
         sync: false
       - key: FIREBASE_CLIENT_EMAIL
         sync: false
+      - key: FIREBASE_PRIVATE_KEY_ID
+        sync: false
+      - key: FIREBASE_CLIENT_ID
+        sync: false
+      - key: FIREBASE_CLIENT_X509_CERT_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
 
   # Frontend Service
   - type: web
