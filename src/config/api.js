@@ -7,5 +7,12 @@ const getApiUrl = () => {
 
 const API_URL = getApiUrl();
 
+// Helper function to construct API endpoints safely
+export const getApiEndpoint = (endpoint) => {
+  // Remove leading slash from endpoint if present, then add it back
+  const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  return `${API_URL}${cleanEndpoint}`;
+};
+
 export default API_URL;
 
